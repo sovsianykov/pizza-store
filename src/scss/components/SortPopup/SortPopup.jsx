@@ -2,8 +2,11 @@ import React from "react";
 
 const SortPopup = ({items}) => {
 const [visiblePopup, setVisiblePopup] =React.useState(false )
+const [activeItem, setActiveItem] =React.useState(0 )
+    const onSelectItem = (index) => {
+        setActiveItem(index)
+    }
 const sortRef = React.useRef()
-    const activeItem =0
 
 const toggleVisiblePopup =() => {
  setVisiblePopup(!visiblePopup);
@@ -40,7 +43,8 @@ const handleOutsideClick = (e) => {
 
                     {items &&
                     items.map((name,index)=> (
-                        <li className={activeItem === index ? 'active' : ''}
+                        <li onClick={() => onSelectItem(index)}
+                            className={activeItem === index ? 'active' : ''}
                             key={`${name}_${index}`}>{name}</li>)
                     )}
                 </ul>
