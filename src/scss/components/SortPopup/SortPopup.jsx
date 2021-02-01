@@ -5,7 +5,9 @@ const [visiblePopup, setVisiblePopup] =React.useState(false )
 const [activeItem, setActiveItem] =React.useState(0 )
     const onSelectItem = (index) => {
         setActiveItem(index)
+        setVisiblePopup(false)
     }
+const activeLabel = items[activeItem]
 const sortRef = React.useRef()
 
 const toggleVisiblePopup =() => {
@@ -36,7 +38,7 @@ const handleOutsideClick = (e) => {
                     />
                 </svg>
                 <b>Sort by:</b>
-                <span onClick={toggleVisiblePopup}>popularity</span>
+                <span onClick={toggleVisiblePopup}>{activeLabel}</span>
             </div>
             { visiblePopup && <div className="sort__popup">
                 <ul>
