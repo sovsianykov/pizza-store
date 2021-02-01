@@ -9,13 +9,16 @@ import logo from "../../../assets/img/pizza-logo.svg";
     return (
         <div className="header">
             <div className="container">
-                <div className="header__logo">
-                    <img width="38" src={logo} alt="Pizza logo"/>
-                    <div>
-                        <h1>Sergei's  Pizza</h1>
-                        <p>the most delicious pizza in the universe</p>
+                <Link  to ='/' >
+                    <div className="header__logo">
+                        <img width="38" src={logo} alt="Pizza logo"/>
+                        <div>
+                            <h1>Sergei's  Pizza</h1>
+                            <p>the most delicious pizza in the universe</p>
+                        </div>
                     </div>
-                   </div>
+                </Link>
+
                 <div className="header__cart">
  <Link  to ='/cart' >
      <Button className = 'button--cart' >
