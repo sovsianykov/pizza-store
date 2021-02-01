@@ -18,7 +18,7 @@ function App() {
                  "Closed"
 
              ]} />
-             <SortPopup/>
+             <SortPopup items = {['popularity','price','alphabet']}/>
             </div>
             <h2 className="content__title">All pizza</h2>
             <div className="content__items">

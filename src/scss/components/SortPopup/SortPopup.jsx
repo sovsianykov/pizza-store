@@ -1,21 +1,24 @@
 import React from "react";
 
-const SortPopup = () => {
+const SortPopup = ({items}) => {
 const [visiblePopup, setVisiblePopup] =React.useState(false )
-const sortRef = React.useRef(null)
+const sortRef = React.useRef()
+    const activeItem =0
 
 const toggleVisiblePopup =() => {
  setVisiblePopup(!visiblePopup);
 
 }
 const handleOutsideClick = (e) => {
-    console.log(e)
+    if (!e.path.includes(sortRef.current)) {
+        setVisiblePopup(false)
+    }
 }
     React.useEffect(()=>{
         document.body.addEventListener('click',handleOutsideClick)
     },[]);
     return (
-        <div className="sort">
+        <div ref={sortRef}  className="sort">
             <div className="sort__label">
                 <svg
                     width="10"
@@ -34,9 +37,12 @@ const handleOutsideClick = (e) => {
             </div>
             { visiblePopup && <div className="sort__popup">
                 <ul>
-                    <li className="active">popularity</li>
-                    <li>price</li>
-                    <li>alphabet</li>
+
+                    {items &&
+                    items.map((name,index)=> (
+                        <li className={activeItem === index ? 'active' : ''}
+                            key={`${name}_${index}`}>{name}</li>)
+                    )}
                 </ul>
             </div>}
         </div>
