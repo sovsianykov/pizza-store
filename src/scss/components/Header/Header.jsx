@@ -1,6 +1,7 @@
  import React from "react";
 import logo from "../../../assets/img/pizza-logo.svg";
-import Button from "../Button/Button";
+ import {Button} from "../index";
+
 
 function Header() {
 
@@ -10,7 +11,7 @@ function Header() {
                 <div className="header__logo">
                     <img width="38" src={logo} alt="Pizza logo"/>
                     <div>
-                        <h1>React Pizza</h1>
+                        <h1>Sergei's  Pizza</h1>
                         <p>the most delicious pizza in the universe</p>
                     </div>
                    </div>
