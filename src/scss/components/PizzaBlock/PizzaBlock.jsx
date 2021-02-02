@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PizzaBlock = ({name, imageUrl})=> {
+const PizzaBlock = ({name, imageUrl,price})=> {
     return (
         <div className="pizza-block">
             <img
@@ -22,7 +22,7 @@ const PizzaBlock = ({name, imageUrl})=> {
                 </ul>
             </div>
             <div className="pizza-block__bottom">
-                <div className="pizza-block__price">from 30 $</div>
+                <div className="pizza-block__price">from {price} $</div>
                 <div className="button button--outline button--add">
                     <svg
                         width="12"
