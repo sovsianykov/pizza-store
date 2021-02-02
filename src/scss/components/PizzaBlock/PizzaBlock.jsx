@@ -1,6 +1,8 @@
 import React from 'react'
 
 const PizzaBlock = ({name, imageUrl,price})=> {
+
+
     return (
         <div className="pizza-block">
             <img
@@ -17,7 +19,7 @@ const PizzaBlock = ({name, imageUrl,price})=> {
                 <ul>
                     <li className="active">26 sm.
                     </li>
-                    <li>30 sm.</li>
+                    <li className='disabled'>30 sm.</li>
                     <li>40 sm.</li>
                 </ul>
             </div>
@@ -41,9 +43,6 @@ const PizzaBlock = ({name, imageUrl,price})=> {
                 </div>
             </div>
         </div>
-
-
-
     )
 }
 export default PizzaBlock;
