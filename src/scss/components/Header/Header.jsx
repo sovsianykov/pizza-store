@@ -18,12 +18,13 @@ import logo from "../../../assets/img/pizza-logo.svg";
                         </div>
                     </div>
                 </Link>
-
                 <div className="header__cart">
  <Link  to ='/cart' >
      <Button className = 'button--cart' >
          <span>520 $</span>
-         <div className="button__delimiter"></div>
+         <div className="button__delimiter">
+
+         </div>
          <svg
              width="18"
              height="18"
