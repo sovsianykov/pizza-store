@@ -17,12 +17,14 @@ import logo from "../../../assets/img/pizza-logo.svg";
                             <p>the most delicious pizza in the universe</p>
                         </div>
                     </div>
-                    </Link>
+                </Link>
                 <div className="header__cart">
  <Link  to ='/cart' >
      <Button className = 'button--cart' >
          <span>520 $</span>
-         <div className="button__delimiter"></div>
+         <div className="button__delimiter">
+
+         </div>
          <svg
              width="18"
              height="18"
