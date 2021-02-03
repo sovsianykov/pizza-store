@@ -16,18 +16,20 @@ class App extends React.Component {
 
     componentDidMount() {
 
-        axios.get('http://localhost:3000/db.json').then(({data}) =>{this.props.dispath(setPizzasAction(data.pizzas))
+        axios.get('http://localhost:3000/db.json')
+            .then(({data}) =>{this.props.setPizzas(data.pizzas)
         })
 
     }
 
 
     render ()  {
+        console.log(this.props.items)
     return (
             <div className="wrapper">
                 <Header/>
                 <div className="content">
-                    <Route exact path='/' render ={()=> <Home items={this.props.items}/>}/>
+                    <Route exact path='/' render ={()=> <Home items={[]}/>}/>
                     <Route exact   path='/cart' component={Cart}/>
                 </div>
             </div>
