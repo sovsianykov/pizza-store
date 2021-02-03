@@ -8,35 +8,24 @@ import {Route} from "react-router-dom";
 import {setPizzas as setPizzasAction } from './redux/actions/pizzas';
 import store  from './redux/store'
 
-
-
-
-
-class App extends React.Component {
-
-    componentDidMount() {
-
+function App({setPizzas, items}) {
+    React.useEffect(() => {
         axios.get('http://localhost:3000/db.json')
-            .then(({data}) =>{this.props.setPizzas(data.pizzas)
-        })
+            .then(({data}) =>{setPizzas(data.pizzas)})
+    },[]);
 
-    }
-
-
-    render ()  {
-        console.log(this.props.items)
     return (
-            <div className="wrapper">
-                <Header/>
-                <div className="content">
-                    <Route exact path='/' render ={()=> <Home items={[]}/>}/>
-                    <Route exact   path='/cart' component={Cart}/>
-                </div>
+        <div className="wrapper">
+            <Header/>
+            <div className="content">
+                <Route exact path='/' render ={()=> <Home items={items}/>}/>
+                <Route exact   path='/cart' component={Cart}/>
             </div>
-        );
-
- }
+        </div>
+    )
 }
+
+
 const mapStateToProps = (state) =>{
     return {
         items: state.pizzas.items,
