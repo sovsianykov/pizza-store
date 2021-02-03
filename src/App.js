@@ -5,6 +5,8 @@ import {Header} from "./scss/components";
 import {Home,Cart} from "./pages";
 import {Route} from "react-router-dom";
 
+
+
 function App() {
     const [pizzas,setPizzas] = React.useState([])
     React.useEffect(() => {
