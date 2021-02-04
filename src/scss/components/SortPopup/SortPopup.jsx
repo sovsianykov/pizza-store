@@ -1,6 +1,5 @@
 import React from "react";
-
-const SortPopup = ({ items }) => {
+ function SortPopup ({ items })  {
   const [visiblePopup, setVisiblePopup] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(0);
   const onSelectItem = (index) => {
@@ -54,7 +53,7 @@ const SortPopup = ({ items }) => {
                 </li>
               ))}
           </ul>
-        </div>
+         </div>
       )}
     </div>
   );
