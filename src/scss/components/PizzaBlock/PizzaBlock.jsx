@@ -70,10 +70,17 @@ const PizzaBlock = ({ name, imageUrl, price, types, sizes }) => {
 };
 
 PizzaBlock.propTypes = {
-  name :  PropTypes.string.isRequired,
-  types : PropTypes.array.isRequired,
-  sizes : PropTypes.array.isRequired,
-  price : PropTypes.number.isRequired
+  name :  PropTypes.string,
+  types : PropTypes.arrayOf(PropTypes.number),
+  sizes : PropTypes.arrayOf(PropTypes.number),
+  price : PropTypes.number
+}
+PizzaBlock.defaultProps = {
+  name: '----',
+  price: 0,
+  sizes : [],
+  types : [],
+  isloading : false
 }
 
 export default PizzaBlock;
