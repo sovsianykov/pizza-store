@@ -1,12 +1,7 @@
-import React from 'react';
-
+import React from "react";
 import { Categories, SortPopup, PizzaBlock } from "../scss/components";
 import { useSelector, useDispatch }  from 'react-redux';
 import  { setCategory } from '../redux/actions/filters';
-import {fetchPizzas } from '../redux/actions/pizzas';
-// import store  from '../redux/store'
-
-
 
 const categoryNames = ["Meat", "Vegetable", "Grill", "Spicy", "Closed"];
 const sortItems = [{name: 'popularity',type: 'popular'},
@@ -14,28 +9,18 @@ const sortItems = [{name: 'popularity',type: 'popular'},
                      {name: 'alphabet',type: 'alphabet'}];
 
 
-function Home() {
-    const dispatch = useDispatch();
-    const items  = useSelector(({pizzas}) => pizzas.items);
-    const {category, sortBy} = useSelector(({filters}) => filters);
-
-    React.useEffect(() => {
-
-
-          dispatch(fetchPizzas())
-
-    },[category]);
-    console.log(category)
-
+const Home = () => {
+  const dispath = useDispatch()
+  const items  = useSelector(({pizzas}) => pizzas.items)
   const onSelectCategory = React.useCallback((index) =>{
-    dispatch(setCategory(index))
+    dispath(setCategory(index))
   }, [])
 
   return (
     <>
       <div className="container">
         <div className="content__top">
-          <Categories activeCategory = {category}
+          <Categories
             onClickItem={onSelectCategory}
             items={categoryNames}
           />
