@@ -12,8 +12,7 @@ function App() {
     const dispatch = useDispatch();
     const {items} = useSelector(({pizzas, filters}) => {
         return {
-            items: pizzas.items,
-            sortBy: filters.sortBy,
+            items: pizzas.items
 
         }
     })
