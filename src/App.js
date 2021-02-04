@@ -1,29 +1,25 @@
 import React from 'react';
-import axios from 'axios';
 import { useSelector, useDispatch }  from 'react-redux';
 
 import {Header} from "./scss/components";
 import {Home,Cart} from "./pages";
 import {Route} from "react-router-dom";
-import {setPizzas } from './redux/actions/pizzas';
+import {fetchPizzas } from './redux/actions/pizzas';
 import store  from './redux/store'
 
 function App() {
     const dispatch = useDispatch();
-    const { items } = useSelector(({pizzas, filters}) => {
+    const { items } = useSelector(({pizzas}) => {
         return {
             items: pizzas.items,
-            sortBy: filters.sortBy,
 
         }
     })
 
 
     React.useEffect(() => {
-        axios.get('http://localhost:3000/db.json')
-            .then(({data}) =>{
-               dispatch(setPizzas(data.pizzas))
-            })
+        console.log(dispatch(fetchPizzas()))
+
     },[]);
 
     return (
