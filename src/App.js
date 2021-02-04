@@ -1,26 +1,21 @@
 import React from 'react';
-import { useSelector, useDispatch }  from 'react-redux';
+import { useSelector}  from 'react-redux';
 
 import {Header} from "./scss/components";
 import {Home,Cart} from "./pages";
 import {Route} from "react-router-dom";
-import {fetchPizzas } from './redux/actions/pizzas';
 import store  from './redux/store'
 
 function App() {
-    const dispatch = useDispatch();
-    const { items } = useSelector(({pizzas}) => {
-        return {
-            items: pizzas.items,
+    // const { items } = useSelector(({pizzas}) => {
+    //     return {
+    //         items: pizzas.items,
+    //
+    //     }
+    // })
 
-        }
-    })
 
 
-    React.useEffect(() => {
-        console.log(dispatch(fetchPizzas()))
-
-    },[]);
 
     return (
         <div className="wrapper">
