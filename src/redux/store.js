@@ -1,5 +1,6 @@
-import {createStore, copmose, applyMiddleware} from 'redux';
-import thunk from 'redux-thunk';import {  useDispatch }  from 'react-redux';
+import {createStore, compose, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
+import {  useDispatch }  from 'react-redux';
 
 
 
