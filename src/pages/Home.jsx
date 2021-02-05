@@ -29,7 +29,7 @@ const Home = () => {
         <div className="content__top">
           <Categories
               activeCategory = {category}
-            onClickCategory={onSelectCategory}
+            onClickItem={onSelectCategory}
             items={categoryNames}
           />
           <SortPopup items = {sortItems}  />
