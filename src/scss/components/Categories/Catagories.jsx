@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Categories = React.memo(
     function Categories({ activeCategory,items, onClickItem }) {
-      const onSelectItem = (index) => {
+      const onClic = (index) => {
         onClickItem(index);
       };
       console.log('RENDER CATEGORIES')
@@ -34,7 +34,7 @@ const Categories = React.memo(
     }
 );
 Categories.propTypes = {
-    activeCategory : PropTypes.number.isRequiered
+    activeCategory : PropTypes.number
 
 }
 Categories.defaultProps = {
