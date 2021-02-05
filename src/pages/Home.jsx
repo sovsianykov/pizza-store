@@ -12,15 +12,10 @@ const sortItems = [{name: 'popularity',type: 'popular'},
 
 
 const Home = () => {
-  const dispatch = useDispatch()
-  const items  = useSelector(({pizzas}) => pizzas.items);
-  const {category,sortBy} = useSelector(({filters})=>filters)
-    React.useEffect(() => {
-        dispatch(fetchPizzas())
-    },[category]);
-
+  const dispath = useDispatch()
+  const items  = useSelector(({pizzas}) => pizzas.items)
   const onSelectCategory = React.useCallback((index) =>{
-    dispatch(setCategory(index))
+    dispath(setCategory(index))
   }, [])
 
   return (
@@ -28,7 +23,6 @@ const Home = () => {
       <div className="container">
         <div className="content__top">
           <Categories
-              activeCategory = {category}
             onClickItem={onSelectCategory}
             items={categoryNames}
           />

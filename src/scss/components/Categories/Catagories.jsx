@@ -33,12 +33,6 @@ const Categories = React.memo(
       );
     }
 );
-Categories.propTypes = {
-    activeCategory : PropTypes.number
 
-}
-Categories.defaultProps = {
-    activeCategory:null, items: []
-}
 
 export default Categories;
