@@ -17,7 +17,7 @@ const Home = () => {
   const {category,sortBy} = useSelector(({filters})=>filters)
     React.useEffect(() => {
         dispatch(fetchPizzas())
-    },[category]);
+    },[category,sortBy]);
 
   const onSelectCategory = React.useCallback((index) =>{
     dispatch(setCategory(index))
